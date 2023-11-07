@@ -1,0 +1,8 @@
+prefix=/home/maker/osorim_ws/install
+
+Name: serial_controller
+Description: Description of serial_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

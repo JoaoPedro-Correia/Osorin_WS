@@ -1,0 +1,2 @@
+serial_controller
+-DCATKIN_DEVEL_PREFIX=/home/maker/osorim_ws/devel -DCMAKE_INSTALL_PREFIX=/home/maker/osorim_ws/install -G Unix Makefiles
