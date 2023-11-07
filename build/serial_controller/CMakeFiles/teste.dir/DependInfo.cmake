@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/maker/osorim_ws/src/serial_controller/src/joy.cpp" "/home/maker/osorim_ws/build/serial_controller/CMakeFiles/teste.dir/src/joy.cpp.o"
+  "/home/maker/osorim_ws/src/serial_controller/src/teste.cpp" "/home/maker/osorim_ws/build/serial_controller/CMakeFiles/teste.dir/src/teste.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

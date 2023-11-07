@@ -632,32 +632,32 @@ std_srvs_generate_messages_lisp/fast:
 	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
 .PHONY : std_srvs_generate_messages_lisp/fast
 
-src/joy.o: src/joy.cpp.o
+src/teste.o: src/teste.cpp.o
 
-.PHONY : src/joy.o
+.PHONY : src/teste.o
 
 # target to build an object file
-src/joy.cpp.o:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/src/joy.cpp.o
-.PHONY : src/joy.cpp.o
+src/teste.cpp.o:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/src/teste.cpp.o
+.PHONY : src/teste.cpp.o
 
-src/joy.i: src/joy.cpp.i
+src/teste.i: src/teste.cpp.i
 
-.PHONY : src/joy.i
+.PHONY : src/teste.i
 
 # target to preprocess a source file
-src/joy.cpp.i:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/src/joy.cpp.i
-.PHONY : src/joy.cpp.i
+src/teste.cpp.i:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/src/teste.cpp.i
+.PHONY : src/teste.cpp.i
 
-src/joy.s: src/joy.cpp.s
+src/teste.s: src/teste.cpp.s
 
-.PHONY : src/joy.s
+.PHONY : src/teste.s
 
 # target to generate assembly for a file
-src/joy.cpp.s:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/src/joy.cpp.s
-.PHONY : src/joy.cpp.s
+src/teste.cpp.s:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/src/teste.cpp.s
+.PHONY : src/teste.cpp.s
 
 # Help Target
 help:
@@ -703,9 +703,9 @@ help:
 	@echo "... std_srvs_generate_messages_nodejs"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... src/joy.o"
-	@echo "... src/joy.i"
-	@echo "... src/joy.s"
+	@echo "... src/teste.o"
+	@echo "... src/teste.i"
+	@echo "... src/teste.s"
 .PHONY : help
 
 

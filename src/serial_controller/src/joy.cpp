@@ -19,20 +19,13 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
     printf("D\n");
   }
 }
-
+*/
+serial::Serial arduino;
 void callback(const sensor_msgs::Joy::ConstPtr& msg) {
-  serial::Serial arduino;
-  arduino.setPort("/dev/ttyACM0");  
-  arduino.setBaudrate(9600);
+  
+  
 
-  if (!arduino.isOpen()) {
-    try {
-      arduino.open();
-    } catch (serial::IOException& e) {
-      ROS_ERROR("Falha ao abrir a porta serial. Certifique-se de que o Arduino esteja conectado e configurado corretamente.");
-      return;
-    }
-  }
+  
 
   uint8_t command;
 
@@ -48,16 +41,23 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
 
   arduino.write(&command, 1);
   
-  arduino.close();
+  //arduino.close();
 }
 
 int main(int argc, char** argv) {
  
   ros::init(argc, argv, "joystick_control");
-
+  arduino.setPort("/dev/ttyUSB0");  
+  arduino.setBaudrate(9600);
   
-  ros::NodeHandle nh;
+  try {
+      arduino.open();
+    } catch (serial::IOException& e) {
+      ROS_ERROR("Falha ao abrir a porta serial. Certifique-se de que o Arduino esteja conectado e configurado corretamente.");
+      return 1;
+    }
 
+  ros::NodeHandle nh;
 
   ros::Subscriber joy_sub = nh.subscribe<sensor_msgs::Joy>("/joy", 1, callback);
 
@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
   return 0;
 }
 
-
+/*
 
 serial::Serial arduino;
 
@@ -121,7 +121,7 @@ int main(int argc, char** argv) {
 }
 
 */
-
+/*
 
 serial::Serial arduino;
 
@@ -157,7 +157,7 @@ int main(int argc, char** argv) {
   ros::init(argc, argv, "joystick_control");
   ros::NodeHandle nh;
 
-  arduino.setPort("/dev/ttyACM0");
+  arduino.setPort("/dev/ttyUSB0");
   arduino.setBaudrate(9600);
 
   try {
@@ -176,3 +176,5 @@ int main(int argc, char** argv) {
 
   return 0;
 }
+
+*/

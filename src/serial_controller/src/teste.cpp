@@ -7,7 +7,7 @@ int main(int argc, char** argv) {
   ros::NodeHandle nh;
 
   // Substitua "/dev/ttyACM1" pela porta serial desejada
-  std::string serial_port = "/dev/ttyACM0";
+  std::string serial_port = "/dev/ttyUSB0";
   int baudrate = 9600;
 
   // Inicializa o objeto da classe Serial com a porta e a taxa de baudrate
