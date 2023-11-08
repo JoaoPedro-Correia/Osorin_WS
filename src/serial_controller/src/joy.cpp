@@ -72,6 +72,8 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
       message = 'D';
     }
 
+    
+
 
     // Envia a string para a porta serial
     
