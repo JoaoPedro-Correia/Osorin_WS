@@ -6,12 +6,24 @@
 
 #IncludeRegexTransform: 
 
-/home/maker/osorim_ws/src/serial_controller/src/teste.cpp
+/home/maker/osorim_ws/src/serial_controller/src/joy.cpp
 ros/ros.h
 -
-std_msgs/String.h
+sensor_msgs/Joy.h
 -
 serial/serial.h
+-
+iostream
+-
+stdio.h
+-
+string.h
+-
+fcntl.h
+-
+termios.h
+-
+unistd.h
 -
 
 /opt/ros/noetic/include/ros/advertise_options.h
@@ -664,6 +676,24 @@ ros/forwards.h
 
 /opt/ros/noetic/include/rosconsole/macros_generated.h
 
+/opt/ros/noetic/include/sensor_msgs/Joy.h
+string
+-
+vector
+-
+memory
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
+-
+
 /opt/ros/noetic/include/serial/serial.h
 limits
 -
@@ -690,7 +720,7 @@ stdio.h
 stdint.h
 -
 
-/opt/ros/noetic/include/std_msgs/String.h
+/opt/ros/noetic/include/std_msgs/Header.h
 string
 -
 vector

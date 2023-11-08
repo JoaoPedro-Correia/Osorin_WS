@@ -57,27 +57,27 @@ include serial_controller/CMakeFiles/teste.dir/progress.make
 # Include the compile flags for this target's objects.
 include serial_controller/CMakeFiles/teste.dir/flags.make
 
-serial_controller/CMakeFiles/teste.dir/src/teste.cpp.o: serial_controller/CMakeFiles/teste.dir/flags.make
-serial_controller/CMakeFiles/teste.dir/src/teste.cpp.o: /home/maker/osorim_ws/src/serial_controller/src/teste.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maker/osorim_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object serial_controller/CMakeFiles/teste.dir/src/teste.cpp.o"
-	cd /home/maker/osorim_ws/build/serial_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/teste.dir/src/teste.cpp.o -c /home/maker/osorim_ws/src/serial_controller/src/teste.cpp
+serial_controller/CMakeFiles/teste.dir/src/joy.cpp.o: serial_controller/CMakeFiles/teste.dir/flags.make
+serial_controller/CMakeFiles/teste.dir/src/joy.cpp.o: /home/maker/osorim_ws/src/serial_controller/src/joy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/maker/osorim_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object serial_controller/CMakeFiles/teste.dir/src/joy.cpp.o"
+	cd /home/maker/osorim_ws/build/serial_controller && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/teste.dir/src/joy.cpp.o -c /home/maker/osorim_ws/src/serial_controller/src/joy.cpp
 
-serial_controller/CMakeFiles/teste.dir/src/teste.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/teste.dir/src/teste.cpp.i"
-	cd /home/maker/osorim_ws/build/serial_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maker/osorim_ws/src/serial_controller/src/teste.cpp > CMakeFiles/teste.dir/src/teste.cpp.i
+serial_controller/CMakeFiles/teste.dir/src/joy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/teste.dir/src/joy.cpp.i"
+	cd /home/maker/osorim_ws/build/serial_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/maker/osorim_ws/src/serial_controller/src/joy.cpp > CMakeFiles/teste.dir/src/joy.cpp.i
 
-serial_controller/CMakeFiles/teste.dir/src/teste.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/teste.dir/src/teste.cpp.s"
-	cd /home/maker/osorim_ws/build/serial_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maker/osorim_ws/src/serial_controller/src/teste.cpp -o CMakeFiles/teste.dir/src/teste.cpp.s
+serial_controller/CMakeFiles/teste.dir/src/joy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/teste.dir/src/joy.cpp.s"
+	cd /home/maker/osorim_ws/build/serial_controller && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/maker/osorim_ws/src/serial_controller/src/joy.cpp -o CMakeFiles/teste.dir/src/joy.cpp.s
 
 # Object files for target teste
 teste_OBJECTS = \
-"CMakeFiles/teste.dir/src/teste.cpp.o"
+"CMakeFiles/teste.dir/src/joy.cpp.o"
 
 # External object files for target teste
 teste_EXTERNAL_OBJECTS =
 
-/home/maker/osorim_ws/devel/lib/serial_controller/teste: serial_controller/CMakeFiles/teste.dir/src/teste.cpp.o
+/home/maker/osorim_ws/devel/lib/serial_controller/teste: serial_controller/CMakeFiles/teste.dir/src/joy.cpp.o
 /home/maker/osorim_ws/devel/lib/serial_controller/teste: serial_controller/CMakeFiles/teste.dir/build.make
 /home/maker/osorim_ws/devel/lib/serial_controller/teste: /opt/ros/noetic/lib/libroscpp.so
 /home/maker/osorim_ws/devel/lib/serial_controller/teste: /usr/lib/x86_64-linux-gnu/libpthread.so

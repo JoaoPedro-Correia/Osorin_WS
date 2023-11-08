@@ -2,6 +2,11 @@
 #include <sensor_msgs/Joy.h>
 #include <serial/serial.h>
 #include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <fcntl.h>
+#include <termios.h>
+#include <unistd.h>
 /*
 void callback(const sensor_msgs::Joy::ConstPtr& msg) {
   
@@ -21,32 +26,74 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
 }
 */
 serial::Serial arduino;
+int serial_port;
+
+
 void callback(const sensor_msgs::Joy::ConstPtr& msg) {
   
+  struct termios tty;
+// Abre a porta serial
+    serial_port = open("/dev/ttyUSB0", O_RDWR);
+    if (serial_port < 0) {
+        perror("Erro ao abrir a porta serial");
+        return ;
+    }
+
+    // Configura os parâmetros da porta serial
+    memset(&tty, 0, sizeof(tty));
+    if (tcgetattr(serial_port, &tty) != 0) {
+        perror("Erro ao obter os atributos da porta serial");
+        return ;
+    }
+
+    tty.c_cflag = CS8 | CREAD | CLOCAL; // 8 bits por caractere, habilita leitura, ignora controle de modem
+    tty.c_iflag = IGNPAR; // Ignora erros de paridade
+    tty.c_oflag = 0;
+    tty.c_lflag = 0; // Modo não canônico
+    cfsetospeed(&tty, B9600); // Define a velocidade de transmissão (9600 bps)
+
+    // Aplica as configurações à porta serial
+    if (tcsetattr(serial_port, TCSANOW, &tty) != 0) {
+        perror("Erro ao aplicar os atributos da porta serial");
+        return ;
+    }
   
+    
+    // String a ser enviada
+    char message;
+
+    if (msg->axes[1] == 1) {
+      message = 'W';
+    } else if (msg->axes[1] == -1) {
+      message = 'S';
+    } else if (msg->axes[0] == 1) {
+       message = 'A';
+    } else if (msg->axes[0] == -1) {
+      message = 'D';
+    }
+
+
+    // Envia a string para a porta serial
+    
+    printf("%c\n",message);
+    write(serial_port, &message, strlen(&message));
+    
+    
+    
+
+    // Fecha a porta serial
+    close(serial_port);
+
 
   
-
-  uint8_t command;
-
-  if (msg->axes[1] == 1) {
-    command = 11;
-  } else if (msg->axes[1] == -1) {
-    command = 12;  
-  } else if (msg->axes[0] == 1) {
-    command = 13;  
-  } else if (msg->axes[0] == -1) {
-    command = 14;  
-  }
-
-  arduino.write(&command, 1);
   
-  //arduino.close();
+  
 }
 
 int main(int argc, char** argv) {
  
   ros::init(argc, argv, "joystick_control");
+  /*
   arduino.setPort("/dev/ttyUSB0");  
   arduino.setBaudrate(9600);
   
@@ -55,7 +102,7 @@ int main(int argc, char** argv) {
     } catch (serial::IOException& e) {
       ROS_ERROR("Falha ao abrir a porta serial. Certifique-se de que o Arduino esteja conectado e configurado corretamente.");
       return 1;
-    }
+    }*/
 
   ros::NodeHandle nh;
 

@@ -211,5 +211,5 @@ include_directories(
 
 
 
-add_executable(teste src/teste.cpp)
+add_executable(teste src/joy.cpp)
 target_link_libraries(teste ${catkin_LIBRARIES})
