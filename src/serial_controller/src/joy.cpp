@@ -8,13 +8,13 @@
 #include <termios.h>
 #include <unistd.h>
 /*
-rosparam set joy_node/dev "/dev/input/js0"
-rosrun joy joy_node
-source osorim_ws/devel/setup.bash
+  rosparam set joy_node/dev "/dev/input/js0"
+  rosrun joy joy_node
+  source osorim_ws/devel/setup.bash
 
-Ao abrir o terminal primeira coisa deve se colocar o parametro de imput para setar o Joystick
-depois dar um source.... 
-igual os codigos acima
+  Ao abrir o terminal primeira coisa deve se colocar o parametro de imput para setar o Joystick
+  depois dar um source.... 
+  igual os codigos acima
 */
 
 //variaveis Statica
