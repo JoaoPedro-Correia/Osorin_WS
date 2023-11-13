@@ -1,2 +1,4 @@
 # Hashes of file build rules.
+03f9c374b689dd9c862d982d2938ba3b /home/maker/osorim_ws/devel/include/freenect_camera/FreenectConfig.h
 cd1decc5cb9bc5dec3be74db05a3eb4c CMakeFiles/clean_test_results
+6c58dfd319134aaaf655bd6c02c25050 freenect_stack/freenect_camera/CMakeFiles/freenect_camera_gencfg

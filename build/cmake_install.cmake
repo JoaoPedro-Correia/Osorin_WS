@@ -131,6 +131,9 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/maker/osorim_ws/build/gtest/cmake_install.cmake")
+  include("/home/maker/osorim_ws/build/freenect_stack/freenect_launch/cmake_install.cmake")
+  include("/home/maker/osorim_ws/build/freenect_stack/freenect_stack/cmake_install.cmake")
+  include("/home/maker/osorim_ws/build/freenect_stack/freenect_camera/cmake_install.cmake")
   include("/home/maker/osorim_ws/build/serial_controller/cmake_install.cmake")
 
 endif()

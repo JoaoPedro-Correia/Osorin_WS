@@ -20,6 +20,14 @@ BUILD_GMOCK:BOOL=ON
 //Build dynamically-linked binaries
 BUILD_SHARED_LIBS:BOOL=ON
 
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=/usr/include
+
+Boost_THREAD_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
+
 //List of ';' separated packages to exclude
 CATKIN_BLACKLIST_PACKAGES:STRING=
 
@@ -343,6 +351,9 @@ GTest_DIR:PATH=GTest_DIR-NOTFOUND
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=OFF
 
+//Path to a library.
+LIBFREENECT_LIBRARY:FILEPATH=/usr/local/lib/libfreenect.so
+
 //lsb_release executable was found
 LSB_FOUND:BOOL=TRUE
 
@@ -351,6 +362,9 @@ LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
 //Path to a program.
 NOSETESTS:FILEPATH=/usr/bin/nosetests3
+
+//pkg-config executable
+PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a program.
 PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
@@ -394,11 +408,65 @@ _gtest_INCLUDES:FILEPATH=/usr/include/gtest/gtest.h
 //Path to a file.
 _gtest_SOURCES:FILEPATH=/usr/src/gtest/src/gtest.cc
 
+//The directory containing a CMake configuration file for bond.
+bond_DIR:PATH=/opt/ros/noetic/share/bond/cmake
+
+//The directory containing a CMake configuration file for bondcpp.
+bondcpp_DIR:PATH=/opt/ros/noetic/share/bondcpp/cmake
+
+//The directory containing a CMake configuration file for boost_atomic.
+boost_atomic_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.71.0
+
+//The directory containing a CMake configuration file for boost_headers.
+boost_headers_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_headers-1.71.0
+
+//The directory containing a CMake configuration file for boost_thread.
+boost_thread_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_thread-1.71.0
+
+//The directory containing a CMake configuration file for camera_calibration_parsers.
+camera_calibration_parsers_DIR:PATH=/opt/ros/noetic/share/camera_calibration_parsers/cmake
+
+//The directory containing a CMake configuration file for camera_info_manager.
+camera_info_manager_DIR:PATH=/opt/ros/noetic/share/camera_info_manager/cmake
+
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/opt/ros/noetic/share/class_loader/cmake
+
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
+
+//The directory containing a CMake configuration file for diagnostic_msgs.
+diagnostic_msgs_DIR:PATH=/opt/ros/noetic/share/diagnostic_msgs/cmake
+
+//The directory containing a CMake configuration file for diagnostic_updater.
+diagnostic_updater_DIR:PATH=/opt/ros/noetic/share/diagnostic_updater/cmake
+
+//The directory containing a CMake configuration file for dynamic_reconfigure.
+dynamic_reconfigure_DIR:PATH=/opt/ros/noetic/share/dynamic_reconfigure/cmake
+
+//Value Computed by CMake
+freenect_camera_BINARY_DIR:STATIC=/home/maker/osorim_ws/build/freenect_stack/freenect_camera
+
+//Value Computed by CMake
+freenect_camera_SOURCE_DIR:STATIC=/home/maker/osorim_ws/src/freenect_stack/freenect_camera
+
+//Value Computed by CMake
+freenect_launch_BINARY_DIR:STATIC=/home/maker/osorim_ws/build/freenect_stack/freenect_launch
+
+//Value Computed by CMake
+freenect_launch_SOURCE_DIR:STATIC=/home/maker/osorim_ws/src/freenect_stack/freenect_launch
+
+//Dependencies for the target
+freenect_nodelet_LIB_DEPENDS:STATIC=general;/opt/ros/noetic/lib/libcamera_info_manager.so;general;/opt/ros/noetic/lib/libcamera_calibration_parsers.so;general;/opt/ros/noetic/lib/libdiagnostic_updater.so;general;/opt/ros/noetic/lib/libdynamic_reconfigure_config_init_mutex.so;general;/opt/ros/noetic/lib/libimage_transport.so;general;/opt/ros/noetic/lib/libmessage_filters.so;general;/opt/ros/noetic/lib/libnodeletlib.so;general;/opt/ros/noetic/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/noetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0;general;/opt/ros/noetic/lib/libxmlrpcpp.so;general;/opt/ros/noetic/lib/libroscpp_serialization.so;general;/opt/ros/noetic/lib/libclass_loader.so;general;/usr/lib/x86_64-linux-gnu/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/noetic/lib/librosconsole.so;general;/opt/ros/noetic/lib/librosconsole_log4cxx.so;general;/opt/ros/noetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0;general;/opt/ros/noetic/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0;general;/opt/ros/noetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4;general;/opt/ros/noetic/lib/libroslib.so;general;/opt/ros/noetic/lib/librospack.so;general;/usr/lib/x86_64-linux-gnu/libpython3.8.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;general;/usr/lib/x86_64-linux-gnu/libtinyxml2.so;general;/usr/local/lib/libfreenect.so;general;log4cxx;
+
+//Value Computed by CMake
+freenect_stack_BINARY_DIR:STATIC=/home/maker/osorim_ws/build/freenect_stack/freenect_stack
+
+//Value Computed by CMake
+freenect_stack_SOURCE_DIR:STATIC=/home/maker/osorim_ws/src/freenect_stack/freenect_stack
 
 //The directory containing a CMake configuration file for geometry_msgs.
 geometry_msgs_DIR:PATH=/opt/ros/noetic/share/geometry_msgs/cmake
@@ -449,11 +517,29 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
 
+//The directory containing a CMake configuration file for image_transport.
+image_transport_DIR:PATH=/opt/ros/noetic/share/image_transport/cmake
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/noetic/lib/libserial.so
 
+//The directory containing a CMake configuration file for message_filters.
+message_filters_DIR:PATH=/opt/ros/noetic/share/message_filters/cmake
+
 //The directory containing a CMake configuration file for message_runtime.
 message_runtime_DIR:PATH=/opt/ros/noetic/share/message_runtime/cmake
+
+//The directory containing a CMake configuration file for nodelet.
+nodelet_DIR:PATH=/opt/ros/noetic/share/nodelet/cmake
+
+//Path to a library.
+pkgcfg_lib_LIBFREENECT_freenect:FILEPATH=/usr/local/lib/libfreenect.so
+
+//Path to a library.
+pkgcfg_lib_LOG4CXX_log4cxx:FILEPATH=/usr/lib/x86_64-linux-gnu/liblog4cxx.so
+
+//The directory containing a CMake configuration file for pluginlib.
+pluginlib_DIR:PATH=/opt/ros/noetic/share/pluginlib/cmake
 
 //The directory containing a CMake configuration file for rosconsole.
 rosconsole_DIR:PATH=/opt/ros/noetic/share/rosconsole/cmake
@@ -470,11 +556,20 @@ roscpp_traits_DIR:PATH=/opt/ros/noetic/share/roscpp_traits/cmake
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/noetic/share/rosgraph_msgs/cmake
 
+//The directory containing a CMake configuration file for roslib.
+roslib_DIR:PATH=/opt/ros/noetic/share/roslib/cmake
+
+//The directory containing a CMake configuration file for rospack.
+rospack_DIR:PATH=/opt/ros/noetic/share/rospack/cmake
+
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/noetic/share/rospy/cmake
 
 //The directory containing a CMake configuration file for rostime.
 rostime_DIR:PATH=/opt/ros/noetic/share/rostime/cmake
+
+//The directory containing a CMake configuration file for sensor_msgs.
+sensor_msgs_DIR:PATH=/opt/ros/noetic/share/sensor_msgs/cmake
 
 //The directory containing a CMake configuration file for serial.
 serial_DIR:PATH=/opt/ros/noetic/share/serial/cmake
@@ -484,6 +579,9 @@ serial_controller_BINARY_DIR:STATIC=/home/maker/osorim_ws/build/serial_controlle
 
 //Value Computed by CMake
 serial_controller_SOURCE_DIR:STATIC=/home/maker/osorim_ws/src/serial_controller
+
+//The directory containing a CMake configuration file for smclib.
+smclib_DIR:PATH=/opt/ros/noetic/share/smclib/cmake
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/noetic/share/std_msgs/cmake
@@ -502,6 +600,8 @@ xmlrpcpp_DIR:PATH=/opt/ros/noetic/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/maker/osorim_ws/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/maker/osorim_ws/build/test_results
@@ -645,7 +745,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -688,8 +788,12 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding Boost
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake][cfound components: thread ][v1.71.0()]
 //Details about finding PY_em
 FIND_PACKAGE_MESSAGE_DETAILS_PY_em:INTERNAL=[/usr/lib/python3/dist-packages/em.py][v()]
+//Details about finding PkgConfig
+FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.29.1()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.8.10()]
 //Details about finding Threads
@@ -722,6 +826,78 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+LIBFREENECT_CFLAGS:INTERNAL=-I/usr/local/include/libfreenect;-I/usr/include/libusb-1.0
+LIBFREENECT_CFLAGS_I:INTERNAL=
+LIBFREENECT_CFLAGS_OTHER:INTERNAL=
+LIBFREENECT_FOUND:INTERNAL=1
+LIBFREENECT_INCLUDEDIR:INTERNAL=/usr/local/include/libfreenect
+LIBFREENECT_INCLUDE_DIRS:INTERNAL=/usr/local/include/libfreenect;/usr/include/libusb-1.0
+LIBFREENECT_LDFLAGS:INTERNAL=-L/usr/local/lib;-lfreenect
+LIBFREENECT_LDFLAGS_OTHER:INTERNAL=
+LIBFREENECT_LIBDIR:INTERNAL=/usr/local/lib
+LIBFREENECT_LIBRARIES:INTERNAL=freenect
+LIBFREENECT_LIBRARY_DIRS:INTERNAL=/usr/local/lib
+LIBFREENECT_LIBS:INTERNAL=
+LIBFREENECT_LIBS_L:INTERNAL=
+LIBFREENECT_LIBS_OTHER:INTERNAL=
+LIBFREENECT_LIBS_PATHS:INTERNAL=
+LIBFREENECT_MODULE_NAME:INTERNAL=libfreenect
+LIBFREENECT_PREFIX:INTERNAL=/usr/local
+LIBFREENECT_STATIC_CFLAGS:INTERNAL=-I/usr/local/include/libfreenect;-I/usr/include/libusb-1.0
+LIBFREENECT_STATIC_CFLAGS_I:INTERNAL=
+LIBFREENECT_STATIC_CFLAGS_OTHER:INTERNAL=
+LIBFREENECT_STATIC_INCLUDE_DIRS:INTERNAL=/usr/local/include/libfreenect;/usr/include/libusb-1.0
+LIBFREENECT_STATIC_LDFLAGS:INTERNAL=-L/usr/local/lib;-lfreenect;-lusb-1.0;-ludev;-pthread
+LIBFREENECT_STATIC_LDFLAGS_OTHER:INTERNAL=-pthread
+LIBFREENECT_STATIC_LIBDIR:INTERNAL=
+LIBFREENECT_STATIC_LIBRARIES:INTERNAL=freenect;usb-1.0;udev
+LIBFREENECT_STATIC_LIBRARY_DIRS:INTERNAL=/usr/local/lib
+LIBFREENECT_STATIC_LIBS:INTERNAL=
+LIBFREENECT_STATIC_LIBS_L:INTERNAL=
+LIBFREENECT_STATIC_LIBS_OTHER:INTERNAL=
+LIBFREENECT_STATIC_LIBS_PATHS:INTERNAL=
+LIBFREENECT_VERSION:INTERNAL=0
+LIBFREENECT_libfreenect_INCLUDEDIR:INTERNAL=
+LIBFREENECT_libfreenect_LIBDIR:INTERNAL=
+LIBFREENECT_libfreenect_PREFIX:INTERNAL=
+LIBFREENECT_libfreenect_VERSION:INTERNAL=
+LOG4CXX_CFLAGS:INTERNAL=
+LOG4CXX_CFLAGS_I:INTERNAL=
+LOG4CXX_CFLAGS_OTHER:INTERNAL=
+LOG4CXX_FOUND:INTERNAL=1
+LOG4CXX_INCLUDEDIR:INTERNAL=/usr/include
+LOG4CXX_INCLUDE_DIRS:INTERNAL=
+LOG4CXX_LDFLAGS:INTERNAL=-llog4cxx
+LOG4CXX_LDFLAGS_OTHER:INTERNAL=
+LOG4CXX_LIBDIR:INTERNAL=/usr/lib/x86_64-linux-gnu
+LOG4CXX_LIBRARIES:INTERNAL=log4cxx
+LOG4CXX_LIBRARY_DIRS:INTERNAL=
+LOG4CXX_LIBS:INTERNAL=
+LOG4CXX_LIBS_L:INTERNAL=
+LOG4CXX_LIBS_OTHER:INTERNAL=
+LOG4CXX_LIBS_PATHS:INTERNAL=
+LOG4CXX_MODULE_NAME:INTERNAL=liblog4cxx
+LOG4CXX_PREFIX:INTERNAL=/usr
+LOG4CXX_STATIC_CFLAGS:INTERNAL=
+LOG4CXX_STATIC_CFLAGS_I:INTERNAL=
+LOG4CXX_STATIC_CFLAGS_OTHER:INTERNAL=
+LOG4CXX_STATIC_INCLUDE_DIRS:INTERNAL=
+LOG4CXX_STATIC_LDFLAGS:INTERNAL=-llog4cxx
+LOG4CXX_STATIC_LDFLAGS_OTHER:INTERNAL=
+LOG4CXX_STATIC_LIBDIR:INTERNAL=
+LOG4CXX_STATIC_LIBRARIES:INTERNAL=log4cxx
+LOG4CXX_STATIC_LIBRARY_DIRS:INTERNAL=
+LOG4CXX_STATIC_LIBS:INTERNAL=
+LOG4CXX_STATIC_LIBS_L:INTERNAL=
+LOG4CXX_STATIC_LIBS_OTHER:INTERNAL=
+LOG4CXX_STATIC_LIBS_PATHS:INTERNAL=
+LOG4CXX_VERSION:INTERNAL=0.10.0
+LOG4CXX_liblog4cxx_INCLUDEDIR:INTERNAL=
+LOG4CXX_liblog4cxx_LIBDIR:INTERNAL=
+LOG4CXX_liblog4cxx_PREFIX:INTERNAL=
+LOG4CXX_liblog4cxx_VERSION:INTERNAL=
+//ADVANCED property for variable: PKG_CONFIG_EXECUTABLE
+PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //This needs to be in PYTHONPATH when 'setup.py install' is called.
@@ -730,6 +906,16 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 PYTHON_INSTALL_DIR:INTERNAL=lib/python3/dist-packages
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/home/maker/osorim_ws/install
+__pkg_config_arguments_LIBFREENECT:INTERNAL=REQUIRED;libfreenect
+__pkg_config_arguments_LOG4CXX:INTERNAL=REQUIRED;liblog4cxx
+__pkg_config_checked_LIBFREENECT:INTERNAL=1
+__pkg_config_checked_LOG4CXX:INTERNAL=1
+//ADVANCED property for variable: boost_atomic_DIR
+boost_atomic_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_headers_DIR
+boost_headers_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: boost_thread_DIR
+boost_thread_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_build_samples
@@ -742,4 +928,9 @@ gtest_disable_pthreads-ADVANCED:INTERNAL=1
 gtest_force_shared_crt-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: gtest_hide_internal_symbols
 gtest_hide_internal_symbols-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_LIBFREENECT_freenect
+pkgcfg_lib_LIBFREENECT_freenect-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: pkgcfg_lib_LOG4CXX_log4cxx
+pkgcfg_lib_LOG4CXX_log4cxx-ADVANCED:INTERNAL=1
+prefix_result:INTERNAL=/usr/lib/x86_64-linux-gnu
 

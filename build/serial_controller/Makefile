@@ -56,38 +56,27 @@ CMAKE_BINARY_DIR = /home/maker/osorim_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"main\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -100,6 +89,18 @@ install/local/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # Special rule for the target test
 test:
@@ -123,17 +124,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,336 +168,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : serial_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: serial_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : serial_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: serial_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
-.PHONY : serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-turtlesim_generate_messages_nodejs: serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
-
-.PHONY : turtlesim_generate_messages_nodejs
-
-# fast build rule for target.
-turtlesim_generate_messages_nodejs/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/build
-.PHONY : turtlesim_generate_messages_nodejs/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : serial_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: serial_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: serial_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make serial_controller/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : serial_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: serial_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : serial_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: serial_controller/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/roscpp_generate_messages_py.dir/build.make serial_controller/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: serial_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : serial_controller/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: serial_controller/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/roscpp_generate_messages_eus.dir/build.make serial_controller/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : serial_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: serial_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/teste.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/teste.dir/rule
-.PHONY : serial_controller/CMakeFiles/teste.dir/rule
-
-# Convenience name for target.
-teste: serial_controller/CMakeFiles/teste.dir/rule
-
-.PHONY : teste
-
-# fast build rule for target.
-teste/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/build
-.PHONY : teste/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : serial_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_py: serial_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_py
-
-# fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make serial_controller/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: serial_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: serial_controller/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_msgs_generate_messages_py.dir/build.make serial_controller/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : serial_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: serial_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 serial_controller/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule:
 	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
 .PHONY : serial_controller/CMakeFiles/turtlesim_generate_messages_cpp.dir/rule
@@ -511,36 +181,6 @@ turtlesim_generate_messages_cpp: serial_controller/CMakeFiles/turtlesim_generate
 turtlesim_generate_messages_cpp/fast:
 	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/turtlesim_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/turtlesim_generate_messages_cpp.dir/build
 .PHONY : turtlesim_generate_messages_cpp/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: serial_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : serial_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_eus: serial_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_eus
-
-# fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make serial_controller/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 serial_controller/CMakeFiles/turtlesim_generate_messages_eus.dir/rule:
@@ -573,6 +213,96 @@ turtlesim_generate_messages_lisp/fast:
 .PHONY : turtlesim_generate_messages_lisp/fast
 
 # Convenience name for target.
+serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
+.PHONY : serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+turtlesim_generate_messages_nodejs: serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/rule
+
+.PHONY : turtlesim_generate_messages_nodejs
+
+# fast build rule for target.
+turtlesim_generate_messages_nodejs/fast:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/turtlesim_generate_messages_nodejs.dir/build
+.PHONY : turtlesim_generate_messages_nodejs/fast
+
+# Convenience name for target.
+serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_py: serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/rule
+
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+# Convenience name for target.
+serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_cpp: serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
+
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+# Convenience name for target.
+serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_eus: serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
+
+.PHONY : std_srvs_generate_messages_eus
+
+# fast build rule for target.
+std_srvs_generate_messages_eus/fast:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/build
+.PHONY : std_srvs_generate_messages_eus/fast
+
+# Convenience name for target.
+serial_controller/CMakeFiles/teste.dir/rule:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/teste.dir/rule
+.PHONY : serial_controller/CMakeFiles/teste.dir/rule
+
+# Convenience name for target.
+teste: serial_controller/CMakeFiles/teste.dir/rule
+
+.PHONY : teste
+
+# fast build rule for target.
+teste/fast:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/teste.dir/build.make serial_controller/CMakeFiles/teste.dir/build
+.PHONY : teste/fast
+
+# Convenience name for target.
+serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_srvs_generate_messages_lisp: serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
+
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+# Convenience name for target.
 serial_controller/CMakeFiles/turtlesim_generate_messages_py.dir/rule:
 	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/turtlesim_generate_messages_py.dir/rule
 .PHONY : serial_controller/CMakeFiles/turtlesim_generate_messages_py.dir/rule
@@ -601,36 +331,6 @@ std_srvs_generate_messages_nodejs: serial_controller/CMakeFiles/std_srvs_generat
 std_srvs_generate_messages_nodejs/fast:
 	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_nodejs.dir/build
 .PHONY : std_srvs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_eus: serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/rule
-
-.PHONY : std_srvs_generate_messages_eus
-
-# fast build rule for target.
-std_srvs_generate_messages_eus/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_eus.dir/build
-.PHONY : std_srvs_generate_messages_eus/fast
-
-# Convenience name for target.
-serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f CMakeFiles/Makefile2 serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/maker/osorim_ws/build && $(MAKE) -f serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make serial_controller/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
 
 src/joy.o: src/joy.cpp.o
 
@@ -665,44 +365,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
-	@echo "... list_install_components"
-	@echo "... edit_cache"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... install/local"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... turtlesim_generate_messages_nodejs"
-	@echo "... test"
-	@echo "... std_srvs_generate_messages_py"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... roscpp_generate_messages_nodejs"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... teste"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... turtlesim_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... install/local"
+	@echo "... turtlesim_generate_messages_cpp"
 	@echo "... turtlesim_generate_messages_eus"
 	@echo "... turtlesim_generate_messages_lisp"
+	@echo "... install/strip"
+	@echo "... turtlesim_generate_messages_nodejs"
+	@echo "... std_srvs_generate_messages_py"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... std_srvs_generate_messages_eus"
+	@echo "... teste"
+	@echo "... std_srvs_generate_messages_lisp"
 	@echo "... turtlesim_generate_messages_py"
 	@echo "... std_srvs_generate_messages_nodejs"
-	@echo "... std_srvs_generate_messages_eus"
-	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... test"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... src/joy.o"
 	@echo "... src/joy.i"
 	@echo "... src/joy.s"
