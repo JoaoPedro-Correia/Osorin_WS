@@ -84,6 +84,8 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
     passada por parametro na função callback
     leio o vetor axes, que tem duas posiçoes [0,1]
   */
+
+ 
   if (msg->axes[1] == 1) {
     message = 'W';
   } else if (msg->axes[1] == -1) {
@@ -92,10 +94,14 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
     message = 'A';
   } else if (msg->axes[0] == -1) {
     message = 'D';
+  } else if (msg->buttons[0] == 1){
+    message = 'P';
+    //break;
   }
 
   // Envia a string para a porta serial 
   printf("%c\n",message);
+  write(serial_port, &message, strlen(&message));
   write(serial_port, &message, strlen(&message));
     
   // Fecha a porta serial
