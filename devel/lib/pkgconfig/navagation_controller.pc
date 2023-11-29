@@ -1,0 +1,8 @@
+prefix=/home/maker/osorim_ws/devel
+
+Name: navagation_controller
+Description: Description of navagation_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
