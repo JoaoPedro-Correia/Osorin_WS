@@ -102,7 +102,7 @@ void callback(const sensor_msgs::Joy::ConstPtr& msg) {
   // Envia a string para a porta serial 
   printf("%c\n",message);
   write(serial_port, &message, strlen(&message));
-  write(serial_port, &message, strlen(&message));
+  //write(serial_port, &message, strlen(&message));
     
   // Fecha a porta serial
   close(serial_port);
@@ -244,4 +244,122 @@ int main(int argc, char** argv) {
 }
 
 Código comentado pq estava testando, foram tentativas falhas de comunicação com a porta serial
+
+
+
+codigo arduino
+
+#define pwm1 2 // Motor Direito
+#define ingA1 4 // Motor Direito
+#define ingB1 3 // Motor Direito
+
+#define pwm2 8 // Motor Esquerdo
+#define ingA2 10 // Motor Esquerdo
+#define ingB2 9 // Motor Esquerdo
+
+void setup() {
+  Serial.begin(9600);
+
+  pinMode(pwm1, OUTPUT);
+  pinMode(ingB1, OUTPUT);
+  pinMode(ingA1, OUTPUT);
+
+  pinMode(pwm2, OUTPUT);
+  pinMode(ingB2, OUTPUT);
+  pinMode(ingA2, OUTPUT);
+}
+
+void loop() {
+  // tempo para andar uma cedula!
+  int tempo = 1550;
+
+  if (Serial.available() > 0) {
+    String stringSerial = Serial.readString();
+    Serial.flush(); 
+    char primeiroCaracter = stringSerial.charAt(0);
+       
+    switch (primeiroCaracter) {
+      case 'W':
+        //SEGUIR EM FRENTE
+        andarFrente(tempo); break;
+      case 'A':
+        //ESQUERDA 90º
+        virarEsquerda90(); break;
+      case 'S':
+        //SEGUIR PARA TRAS
+        andarTras(tempo); break;
+      case 'D':
+        //DIREITA 90º
+        virarDireita90(); break;
+      case 'P':
+        //PARAR
+        parar(); break;
+    }
+  }
+}
+
+void andarFrente(int tempo){
+  digitalWrite(ingB2, LOW);
+  digitalWrite(ingB1, LOW);
+        
+  digitalWrite(ingA2, HIGH);
+  digitalWrite(ingA1, HIGH);
+        
+  analogWrite(pwm1,150);
+  analogWrite(pwm2,150);
+
+  delay(tempo);  
+  parar();
+}
+
+void andarTras(int tempo){
+  digitalWrite(ingA1, LOW);
+  digitalWrite(ingA2, LOW);
+
+  digitalWrite(ingB1, HIGH);
+  digitalWrite(ingB2, HIGH);
+        
+  analogWrite(pwm1,160);
+  analogWrite(pwm2,160);
+
+  delay(tempo);  
+  parar();
+}
+
+void virarEsquerda90(){
+  digitalWrite(ingA2, LOW);
+  digitalWrite(ingB1, LOW);
+
+  digitalWrite(ingA1, HIGH);
+  digitalWrite(ingB2, HIGH);
+        
+  analogWrite(pwm1,200);
+  analogWrite(pwm2,200);
+  delay(1505);  
+  parar();
+}
+
+void virarDireita90(){
+  digitalWrite(ingA1, LOW);
+  digitalWrite(ingB2, LOW);
+
+  digitalWrite(ingB1, HIGH);
+  digitalWrite(ingA2, HIGH);
+        
+  analogWrite(pwm1,240);   
+  analogWrite(pwm2,240); 
+  delay(1370);   
+  parar();
+}
+
+void parar(){
+  digitalWrite(ingA1, LOW);
+  digitalWrite(ingA2, LOW);
+
+  digitalWrite(ingB1, LOW);
+  digitalWrite(ingB2, LOW);
+}
+
+
+
 */
