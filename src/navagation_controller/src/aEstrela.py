@@ -1,4 +1,7 @@
 import math
+import rospy
+from std_msgs.msg import String  # Importe o tipo de mensagem apropriado para as coordenadas do caminho
+
 
 class Node:
     def __init__(self, x, y):
@@ -54,6 +57,22 @@ class AlgoritmoAStar:
         caminho.append(inicio)
         caminho.reverse()
         return caminho
+
+
+def publicar_caminho(caminho):
+    rospy.init_node('publicador_caminho', anonymous=True)
+    pub = rospy.Publisher('caminho_encontrado', String, queue_size=10)
+    rate = rospy.Rate(1)  # Defina a frequência de publicação (1 Hz neste exemplo)
+
+    while not rospy.is_shutdown():
+        coordenadas = ""
+        for no in caminho:
+            coordenadas += f"({no.x}, {no.y}) "
+
+        rospy.loginfo(coordenadas)
+        pub.publish(coordenadas)
+        rate.sleep()
+
 
 # Definição manual da matriz
 matriz = [

@@ -209,6 +209,7 @@ include_directories(
 
 add_executable(teste src/joy.cpp)
 target_link_libraries(teste ${catkin_LIBRARIES})
+
 #add_dependencies(teste comunicar_com_osorin)
 
 #add_executable(testeJoao src/joyJoao.cpp)
